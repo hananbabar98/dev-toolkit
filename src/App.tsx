@@ -9,6 +9,7 @@ import ImageOptimizer from "./tools/ImageOptimizer";
 import JsonSchemaForm from "./tools/JsonSchemaForm";
 import RegexTester from "./tools/RegexTester";
 import GitCommandBuilder from "./tools/GitCommandBuilder";
+import FaviconGenerator from "./tools/FaviconGenerator";
 
 interface Tool {
   id: string;
@@ -83,6 +84,15 @@ const GitIcon = () => (
     <circle cx="6" cy="6" r="3" />
     <path d="M13 6h3a2 2 0 0 1 2 2v7" />
     <line x1="6" y1="9" x2="6" y2="21" />
+  </svg>
+);
+const FaviconIcon = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="3" />
+    <rect x="6" y="6" width="5" height="5" rx="1" />
+    <rect x="13" y="6" width="5" height="5" rx="1" />
+    <rect x="6" y="13" width="5" height="5" rx="1" />
+    <rect x="13" y="13" width="5" height="5" rx="1" />
   </svg>
 );
 const BackIcon = () => (
@@ -177,6 +187,15 @@ const TOOLS: Tool[] = [
     icon: <GitIcon />,
     badge: "Version Control",
     component: GitCommandBuilder,
+  },
+  {
+    id: "favicon",
+    name: "Favicon Generator",
+    tagline: "Upload image, get all sizes",
+    description: "Generate all required favicon sizes from any image — browser, Apple Touch, Android Chrome, MS Tile — plus ready-to-paste HTML tags.",
+    icon: <FaviconIcon />,
+    badge: "Media",
+    component: FaviconGenerator,
   },
 ];
 
